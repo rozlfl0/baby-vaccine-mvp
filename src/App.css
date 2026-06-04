@@ -315,8 +315,68 @@ button:disabled { opacity: .45; cursor: not-allowed; box-shadow: none; transform
   box-shadow: rgba(34,34,34,.18) 0 12px 28px;
 }
 
+.choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.choice-card {
+  min-height: 118px;
+  display: grid;
+  gap: 8px;
+  text-align: left;
+  background: #fff;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  box-shadow: rgba(0,0,0,.03) 0 2px 8px;
+}
+.choice-card.active { background: var(--ink); color: #fff; }
+.choice-card span { color: inherit; opacity: .78; font-weight: 700; }
+.pregnancy-form { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: end; }
+.pregnancy-form label { display: grid; gap: 7px; font-weight: 900; color: #514742; }
+.pregnancy-grid { grid-template-columns: 1fr 1.25fr; }
+.pregnancy-summary, .recommendation { background: linear-gradient(135deg, #fff, #fff7f4); }
+.big-metric {
+  display: grid;
+  gap: 4px;
+  margin: 12px 0;
+  padding: 18px;
+  border-radius: 22px;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+.big-metric strong { font-size: clamp(34px, 5vw, 52px); letter-spacing: -1.5px; }
+.big-metric span { color: var(--brand-dark); font-weight: 900; }
+.pregnancy-item {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 10px;
+  text-align: left;
+  background: #fff;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 14px;
+  box-shadow: rgba(0,0,0,.03) 0 2px 8px;
+}
+.pregnancy-item .checkmark { grid-row: 1 / 5; color: var(--brand-dark); font-weight: 900; }
+.pregnancy-item span:not(.checkmark) { color: var(--muted); font-size: 14px; }
+.pregnancy-item em, .pregnancy-item small {
+  width: fit-content;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #fff0f3;
+  color: var(--brand-dark);
+  font-style: normal;
+  font-size: 12px;
+  font-weight: 900;
+}
+.pregnancy-item small { background: #eff7ff; color: #2f6f95; }
+.pregnancy-item.completed { background: #f4fbf1; }
+.category-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.category-tabs button { background: #fff; color: var(--muted); border: 1px solid var(--line); box-shadow: none; }
+.category-tabs button.active { background: var(--ink); color: #fff; }
+.recommendation ul { margin: 10px 0 0; padding-left: 20px; color: #514742; line-height: 1.7; font-weight: 700; }
+
 @media (max-width: 900px) {
-  .form-grid, .grid, .filters, .export-panel { grid-template-columns: 1fr; }
+  .form-grid, .grid, .filters, .export-panel, .choice-grid, .pregnancy-form, .pregnancy-grid { grid-template-columns: 1fr; }
   .schedule-row { grid-template-columns: auto 1fr; }
   .schedule-row em { grid-column: 2; }
   .app { width: min(100% - 18px, 1120px); padding-top: 10px; }
